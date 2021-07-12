@@ -246,6 +246,7 @@ namespace calculadora
             pri = double.Parse(txtingreso.Text);
             txtingreso.Clear();
             btnresta.Enabled = false;
+            btnpunto.Enabled = true;
         }
 
 
@@ -256,6 +257,7 @@ namespace calculadora
             pri = double.Parse(txtingreso.Text);
             txtingreso.Clear();
             btnmultiplicar.Enabled = false;
+            btnpunto.Enabled = true;
         }
 
         private void btndivision_Click_1(object sender, EventArgs e)
@@ -268,6 +270,7 @@ namespace calculadora
             pri = double.Parse(txtingreso.Text);
             txtingreso.Clear();
             btndivision.Enabled = false;
+             btnpunto.Enabled = true;
 
             }
             else
@@ -313,6 +316,7 @@ namespace calculadora
             pri = double.Parse(txtingreso.Text);
             txtingreso.Clear();
             btnpotencia.Enabled = false;
+            btnpunto.Enabled = true;
 
         }
 
@@ -328,6 +332,7 @@ namespace calculadora
             Rai = resultado6.raizz((pri), (seg));
             txtingreso.Text = Rai.ToString();
             btnraiz.Enabled = false;
+            btnpunto.Enabled = true;
 
         }
 
@@ -338,7 +343,8 @@ namespace calculadora
             pri = double.Parse(txtingreso.Text);
             txtingreso.Clear();
             btnporcentaje.Enabled = false;
-         
+            btnpunto.Enabled = true;
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
