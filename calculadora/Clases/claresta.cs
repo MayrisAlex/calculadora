@@ -21,11 +21,6 @@ namespace calculadora.Clases
 
 
 
-        //      public double restar(double N1, double N2)
-        //{
-        //  double r;
-        //r = N1 - N2;
-        //return r;
 
 
 

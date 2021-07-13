@@ -15,8 +15,8 @@ namespace calculadora
 
         double pri;
         double seg;
-      
-        string operacionb=string.Empty;
+
+        string operacionb = string.Empty;
 
         // public string numeros = string.Empty;
 
@@ -44,8 +44,8 @@ namespace calculadora
         {
             txtingreso.Text = txtingreso.Text + "1";
             txtvisual.Text = txtvisual.Text + "1";
-        
-           
+
+
 
         }
 
@@ -118,7 +118,7 @@ namespace calculadora
         }
         private void btnpunto_Click(object sender, EventArgs e)
         {
-            txtingreso.Text=txtingreso.Text + ",";
+            txtingreso.Text = txtingreso.Text + ",";
             txtvisual.Text = txtvisual.Text + ",";
 
             btnpunto.Enabled = false;
@@ -128,7 +128,7 @@ namespace calculadora
         {
             txtvisual.Text = txtvisual.Text + "+";
             operacionb = "+";
-            pri = double.Parse(txtingreso.Text); 
+            pri = double.Parse(txtingreso.Text);
             txtingreso.Clear();
             btnsuma.Enabled = false;
             btnpunto.Enabled = true;
@@ -140,83 +140,97 @@ namespace calculadora
 
         private void btnigual_Click(object sender, EventArgs e)
         {
-            seg = double.Parse(txtingreso.Text);
 
-            double Sum;
-            double Rest;
-            double Multi;
-            double Divi;
-            double Pote;
-            double Rai;
-            double Por;
-            double Pot;
+
+            if (!string.IsNullOrEmpty(txtingreso.Text))
+
+            {
+
+                seg = double.Parse(txtingreso.Text);
+
+
+                double Sum;
+                double Rest;
+                double Multi;
+                double Divi;
+                double Pote;
+                double Rai;
+                double Por;
+                double Pot;
 
 
                 switch (operacionb)
-            {
-                case "+":
-                    
-                    Sum = resultado1.sumar((pri), (seg));
-                    txtingreso.Text = Sum.ToString();
-                    txtvisual.Text = "";
-                    txtvisual.Text = Sum.ToString();
-               
-                    break;
-                    
+                {
+                    case "+":
 
-                case "-":
-                    
+                        Sum = resultado1.sumar((pri), (seg));
+                        txtingreso.Text = Sum.ToString();
+                        txtvisual.Text = "";
+                        txtvisual.Text = Sum.ToString();
+
+                        break;
+
+
+                    case "-":
+
                         Rest = resultado2.restar((pri), (seg));
                         txtingreso.Text = Rest.ToString();
                         txtvisual.Text = "";
                         txtvisual.Text = Rest.ToString();
-                    break;
-                    
+                        break;
 
-                case "*":
-                    
+
+                    case "*":
+
                         Multi = resultado3.multiplicar((pri), (seg));
                         txtingreso.Text = Multi.ToString();
-                    txtvisual.Text = "";
-                    txtvisual.Text = Multi.ToString();
-                    break;
-                    
+                        txtvisual.Text = "";
+                        txtvisual.Text = Multi.ToString();
+                        break;
 
-                case "/":
-                   
+
+                    case "/":
+
 
                         Divi = resultado4.dividir((pri), (seg));
                         txtingreso.Text = Divi.ToString();
                         txtvisual.Text = "";
                         txtvisual.Text = Divi.ToString();
-                   
-                    break;
-                case "√2":
 
-                    Rai = resultado6.raizz((pri), (seg));
-                    txtingreso.Text = Rai.ToString();
-                    txtvisual.Text = "";
-                    txtvisual.Text = Rai.ToString();
-                    break;
+                        break;
+                    case "√2":
 
-                case "%":
+                        Rai = resultado6.raizz((pri), (seg));
+                        txtingreso.Text = Rai.ToString();
+                        txtvisual.Text = "";
+                        txtvisual.Text = Rai.ToString();
+                        break;
 
-                  
-                    Por = resultado7.porcentar((pri), (seg));
-                    txtingreso.Text = Por.ToString();
-                    txtvisual.Text = "";
-                    txtvisual.Text = Por.ToString();
-                    break;
-                case "xⁿ":
+                    case "%":
 
 
-                    Pot = resultado8.porcentar((pri), (seg));
-                    txtingreso.Text = Pot.ToString();
-                    txtvisual.Text = "";
-                    txtvisual.Text = Pot.ToString();
-                    break;
-               
+                        Por = resultado7.porcentar((pri), (seg));
+                        txtingreso.Text = Por.ToString();
+                        txtvisual.Text = "";
+                        txtvisual.Text = Por.ToString();
+                        break;
+                    case "xⁿ":
+
+
+                        Pot = resultado8.porcentar((pri), (seg));
+                        txtingreso.Text = Pot.ToString();
+                        txtvisual.Text = "";
+                        txtvisual.Text = Pot.ToString();
+                        break;
+                }
             }
+            else
+            {
+                MessageBox.Show("Ingrese el segundo valor, campo vacio ");
+            }
+        
+               
+          
 
             btnpunto.Enabled = true;
             btnsuma.Enabled = true;
@@ -349,7 +363,7 @@ namespace calculadora
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            MessageBox.Show("BIENVENIDOS AL PROYECTO FINAL");
+            MessageBox.Show("BIENVENIDOS AL PROYECTO FINAL", "********** /// CALCULADORA ////^^^// *******",MessageBoxButtons.OK,MessageBoxIcon.Asterisk);
 
         }
 
